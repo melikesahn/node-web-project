@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign in/up Form</title>
+	<link rel="stylesheet" href="design.css"> <!-- Bu satırda CSS dosyası bağlantısı yapılır (style.css ismi varsayılan olarak kabul edilmiştir) -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self' https://uploads-ssl.webflow.com https://cdnjs.cloudflare.com;">
+
+	
+
+   
+</head>
+<body>
+	<h2>Sign in/up Form</h2>
+
+	<!-- Formların bulunduğu ana bölüm -->
+	<div class="container" id="container">
+		
+		<!-- Kullanıcı Kayıt Formu -->
+<div class="form-container sign-up-container">
+	<form action="/register" method="post">
+	  <h1>Create Account</h1>
+	  <div class="social-container">
+		<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+		<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+		<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+	  </div>
+	  <span>or use your email for registration</span>
+	  <input type="text" name="username" placeholder="User Name" />
+	  <input type="email" name="email" placeholder="Email" />
+	  <input type="password" name="password" placeholder="Password" />
+	  <button type="submit">Sign Up</button>
+	</form>
+  </div>
+  
+  <!-- Kullanıcı Giriş Formu -->
+  <div class="form-container sign-in-container">
+	<form action="/login" method="post">
+	  <h1>Sign in</h1>
+	  <div class="social-container">
+		<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+		<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+		<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+	  </div>
+	  <span>or use your account</span>
+	  <input type="text" name="username" placeholder="User Name" /> <!-- Veya e-posta adresi ile giriş yapabilirsiniz -->
+	  <input type="password" name="password" placeholder="Password" />
+	  <a href="#">Forgot your password?</a>
+	  <button type="submit">Sign In</button>
+	</form>
+  </div>
+  
+        
+
+		<!-- Geçiş efektini içeren overlay bölümü -->
+		<div class="overlay-container">
+			<div class="overlay">
+				<!-- Sol panel (Welcome Back!) -->
+				<div class="overlay-panel overlay-left">
+					<h1>Welcome Back!</h1>
+					<p>To keep connected with us please login with your personal info</p>
+					<button class="ghost" id="signIn">Sign In</button>
+				</div>
+
+				<!-- Sağ panel (Hello, Friend!) -->
+				<div class="overlay-panel overlay-right">
+					<h1>Hello, Friend!</h1>
+					<p>Enter your personal details and start journey with us</p>
+					<button class="ghost" id="signUp">Sign Up</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<footer>
+        <p>
+            Created by Melike Şahin.
+        </p>
+    </footer>
+    <script src="content.js"></script>
+</body>
+</html>
