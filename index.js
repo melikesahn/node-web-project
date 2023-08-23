@@ -80,6 +80,10 @@ const addUser = async (username, email, password) => {
 app.post('/register', async (req, res) => {
   const { username, email, password } = req.body;
 
+  if (!username || !email || !password) {
+    return res.status(400).json({ error: 'Boş alanları doldurun' });
+  }
+
   try {
     // Kullanıcıyı veritabanına kaydediyoruz
     const userId = await addUser(username, email, password);
@@ -89,9 +93,14 @@ app.post('/register', async (req, res) => {
   }
 });
 
+
 // Kullanıcı giriş kontrolü
 app.post('/login', async (req, res) => {
   const { username, password } = req.body;
+
+  if (!username || !password) {
+    return res.status(400).json({ error: 'Boş alanları doldurun' });
+  }
 
   try {
     // Kullanıcı girişini kontrol ediyoruz
@@ -105,6 +114,7 @@ app.post('/login', async (req, res) => {
     res.status(500).json({ error: 'Giriş işlemi başarısız oldu' });
   }
 });
+
 
 // Diğer istekler için gerekli yönlendirmeleri ekleyebilirsiniz
 // Örneğin, "/about" sayfası için
